@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeroesComponent } from './heroes.component';
+import { FormsModule } from '@angular/forms';
 
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
@@ -7,7 +8,8 @@ describe('HeroesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HeroesComponent]
+      declarations: [HeroesComponent],
+      imports: [FormsModule]
     }).compileComponents();
   }));
 
@@ -21,8 +23,8 @@ describe('HeroesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render the hero Windstorm', () => {
+  it('should render the hero Windstorm details', () => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('p').textContent).toContain('Windstorm');
+    expect(compiled.querySelector('h2').textContent).toContain('WINDSTORM Details');
   });
 });
